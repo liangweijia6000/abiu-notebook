@@ -61,9 +61,14 @@ void Config::Init()
 	}
 }
 
-void Config::GetIpAddr(IpAddr& info)
+int Config::GetIpAddr(IpAddr& info)
 {
-	//
+	if(_configMap.find("server") == _configMap.end())
+	{
+		std::cout<<"GetIpAddr error Config Uninitialized"<<std::endl;
+		return -1;
+	}
+	return 0;
 }
 
 void Config::GetMySQLInfo(MySQLInfo& info)

@@ -28,7 +28,7 @@ public:
 public:
     void Init();
     
-    void GetIpAddr(IpAddr& info);
+    int GetIpAddr(IpAddr& info);
     void GetMySQLInfo(MySQLInfo& info);
 
 private:
