@@ -68,6 +68,9 @@ int Config::GetIpAddr(IpAddr& info)
 		std::cout<<"GetIpAddr error Config Uninitialized"<<std::endl;
 		return -1;
 	}
+
+	info.ip =  _configMap["server"]["ip"];
+	info.port = std::stoi(_configMap["server"]["port"]);
 	return 0;
 }
 
