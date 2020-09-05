@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <fstream>
 #include <map>
+#include <cstring>
+#include <vector>
+
 
 #define SINGLETON_DECLARATION(class_name) \
 	public:		static class_name& getInstance();	\
