@@ -8,31 +8,31 @@ const static std::string CONFIG_PATH="./server.conf";
 struct IpAddr
 {
 	std::string ip;
-    int port;
+	int port;
 };
 
 struct MySQLInfo
 {
-    std::string ip;
-    int port;
-    std::string username;
-    std::string password;
+	std::string ip;
+	int port;
+	std::string username;
+	std::string password;
 };
 
 class Config
 {
-    SINGLETON_DECLARATION(Config)
-public:
-    Config();
-    ~Config();
-public:
-    void Init();
-    
-    int GetIpAddr(IpAddr& info);
-    void GetMySQLInfo(MySQLInfo& info);
+	SINGLETON_DECLARATION(Config)
+	public:
+		Config();
+		~Config();
+	public:
+		void Init();
 
-private:
-	std::map<std::string, std::map<std::string, std::string>> _configMap;
+		int GetIpAddr(IpAddr& info);
+		void GetMySQLInfo(MySQLInfo& info);
+
+	private:
+		std::map<std::string, std::map<std::string, std::string>> _configMap;
 
 };
 

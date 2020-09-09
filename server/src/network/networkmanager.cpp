@@ -22,7 +22,7 @@ bool NetworkManager::Init(IpAddr ipAddr)
 
 Service* NetworkManager::CreateService()
 {
-    printf("NetworkManager::CreateService\n");
+    printf("NetworkManager::CreateService()\n");
     if (this->pService != NULL)
     {
         this->pService = new Service(this->ipAddr);

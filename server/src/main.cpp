@@ -12,15 +12,15 @@
 
 int main()
 {
-	std::cout<<"server run"<<std::endl;
+	printf("Server Run \n");
 
 	Config::getInstance().Init();
 
 	IpAddr info;
 	Config::getInstance().GetIpAddr(info);
-    printf("Load config ip:%s, port:%d", info.ip.c_str(), info.port);
+	printf("Load config ip:%s, port:%d\n", info.ip.c_str(), info.port);
 
-    if(!NetworkManager::getInstance().Init(info))
+	if(!NetworkManager::getInstance().Init(info))
 	{
 		return 0;
 	}
@@ -28,13 +28,13 @@ int main()
 	Service* pService = NetworkManager::getInstance().CreateService();
 	if (!pService)
 	{
-		printf("main NetworkManager createService eroor \n");
+		printf("main() NetworkManager createService eroor \n");
 		return 0;
 	}
 
 	if (!pService->Start())
 	{
-		printf("Service Start error");
+		printf("main() service start error \n");
 		return 0;
 	}	
 

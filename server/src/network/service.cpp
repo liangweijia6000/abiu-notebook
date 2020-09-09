@@ -92,7 +92,7 @@ void Service::Process()
         char buff[INET_ADDRSTRLEN + 1] = {0};
         inet_ntop(AF_INET, &remoteAddr.sin_addr, buff, INET_ADDRSTRLEN);
         uint16_t port = ntohs(remoteAddr.sin_port);
-        printf("on client connected:%s, port:%d\n", buff, port);
+        printf("On client connected:%s, port:%d\n", buff, port);
         this->socketfdVec.push_back(acceptfd);
     }
 
@@ -103,7 +103,7 @@ void Service::Process()
         int len = recv(*it, buf, BUFSIZ, 0);
         if ((len < 0 && errno != EWOULDBLOCK) || len == 0)
         {
-            printf("connnection closed fd:%d\n", *it);
+            printf("Connnection closed fd:%d\n", *it);
             this->socketfdVec.erase(it);
             it--;
             continue;

@@ -4,20 +4,20 @@ SINGLETON_DEFINITION(Config)
 
 Config::Config()
 {
-    //
+	//
 }
 
 Config::~Config()
 {
-    //
+	//
 }
 
 
 void Config::Init()
 {
-	std::cout<<"Load Config"<<std::endl;
+	printf("Load Config\n");
 
-    std::ifstream fileStream(CONFIG_PATH.c_str());
+	std::ifstream fileStream(CONFIG_PATH.c_str());
 
 	std::string readStr;
 
@@ -64,8 +64,8 @@ void Config::Init()
 int Config::GetIpAddr(IpAddr& info)
 {
 	if(_configMap.find("server") == _configMap.end())
-	{
-		std::cout<<"GetIpAddr error Config Uninitialized"<<std::endl;
+	{	
+		printf("Config::GetIpAddr() error:config ninitialized \n");
 		return -1;
 	}
 
